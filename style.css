@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+body {
+    font-family: "Satisfy", serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    background-image: url('colorfulbg.png.png'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center;
+}
+
+#shape-container {
+    text-align: center;
+}
+
+#shape {
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    left: 550px;
+    position:fixed;
+    top:250px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+select {
+    font-family: "Satisfy", serif;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: -140px;
+    margin-left: -55px;
+    position: fixed;
+    border-radius: 10px;
+}
+
+.shape {
+    display: flex;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left:100%;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    clip-path: ellipse(40% 40% at 50% 50%);
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.triangle {
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.star {
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.hexagon {
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.pentagon {
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.octagon {
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.diamond {
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    clip-path: polygon(50% 0, 88% 50%, 50% 100%, 12% 50%);
+}
+
+.rectangle {
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    clip-path: polygon(0 20%, 100% 20%, 100% 80%, 0 80%);
+}
+
+.ellipse {
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    clip-path: ellipse(25% 40% at 50% 50%);
+}
+.glowingButton {
+    font-family: "Satisfy", serif;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #765e5e60;
+    cursor: pointer;
+    position:fixed;
+    top: 3rem;
+    left: 45%;
+    z-index: 0;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+.glowingButton:before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #3B0000,
+        #FFF6CD,
+        #FF0000,
+        #FFF6CD,
+        #170055,
+        #B1FFFD,
+        #FFEF78,
+        #C400FF,
+        #3B0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: buttonGlow 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+@keyframes buttonGlow {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+.glowingButton:active {
+    color: #fff;
+}
+.glowingButton:active:after {
+    background: #a87676fd;
+}
+.glowingButton:hover:before {
+    opacity: 1;
+}
+.glowingButton:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #19191951;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+@media screen and (max-width: 600px) {
+    .glowingButton {
+        font-size: 14px;
+        top: 12em;
+    }
+}
+.copyButton {
+    font-family: "Satisfy", serif;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #765e5e60;
+    cursor: pointer;
+    position:fixed;
+    top: 13rem;
+    left: 45%;
+    z-index: 0;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+.copyButton:before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #3B0000,
+        #FFF6CD,
+        #FF0000,
+        #FFF6CD,
+        #170055,
+        #B1FFFD,
+        #FFEF78,
+        #C400FF,
+        #3B0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: buttonGlow 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+@keyframes buttonGlow {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+.copyButton:active {
+    color: #fff;
+}
+.copyButton:active:after {
+    background: #a87676fd;
+}
+.copyButton:hover:before {
+    opacity: 1;
+}
+.copyButton:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #19191951;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}

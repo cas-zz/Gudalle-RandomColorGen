@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color and Shape Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="shape-container">
+        <select id="shape-select">
+            <option value="circle">Circle</option>
+            <option value="square">Square</option>
+            <option value="triangle">Triangle</option>
+            <option value="star">Star</option>
+            <option value="hexagon">Hexagon</option>
+            <option value="pentagon">Pentagon</option>
+            <option value="octagon">Octagon</option>
+            <option value="diamond">Diamond</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="ellipse">Ellipse</option>
+        </select>
+        <div class="textHolder tooltip">
+            <button class="copyButton" id="copy-btn">Copy Color Code</button>
+            <span id="color-code"></span>
+        </div>
+        <button class="glowingButton" id="generate-btn">
+            Generate Color
+        </button>
+        <div id="shape"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
